@@ -1,0 +1,42 @@
+# Introduction
+
+This package implements a TaskCluster challenge; specifics detailed below.
+
+To install from source, put under GOPATH:
+- go build challenge
+- go install challenge
+- ./bin/challenge
+- point browser to http://localhost:8080/task-state/O6pKa79XTaKDyDv5vGH51A
+
+Append ?output=html to the URL to get HTML output instead of JSON.
+
+Otherwise a binary is provided.
+
+To run unittests:
+- go test challenge/challenge
+
+# Challenge request
+
+Create a simple API that responds to a GET request by:
+
+Fetching an Inspect TaskGraph Response object using the taskGraphId as a parameter. Doc link: http://docs.taskcluster.net/scheduler/api-docs/#inspectTask
+
+Returning the state of all the tasks in the TaskGraph in a valid JSON object.
+
+taskGraphId you can use to test: O6pKa79XTaKDyDv5vGH51A
+
+Provide a unit test for some function in your code
+
+bonus: transform the list of tasks into a tree based on task.dependents
+
+bonus: provide an HTML-ized endpoint
+
+bonus: deploy on Heroku (or PaaS of your choice), or provide a Dockerfile
+
+Send the code to us in a zip archive, and we’ll run it locally (including tests!).
+
+
+We should be able to just use ‘curl’ against localhost to return a 
+result,so provide a way of starting up your code in a webserver. Be sure
+to provide the package dependencies so that we can run and test your code! A short README with instructions is welcome. We expect this challenge to take 1-2 hours. Please just check before spending more time if it takes you longer.
+
